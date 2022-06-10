@@ -16,7 +16,15 @@ class FlashChat extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.black54),
         ),
       ),
-      home: WelcomeScreen(),
+      //route를 위한 코드들. 문자로만 하면 오타시 앱이 충돌나기에 변수로 route 불러와줌.
+      initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id : (context) => LoginScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        ChatScreen.id : (context) => ChatScreen(),
+
+      }
     );
   }
 }

@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hanyang_flutter_project/screens/registration_screen.dart';
+import 'package:hanyang_flutter_project/screens/login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
+
+  //main에서 welcome_screen route를 불러오기 위한 변수 선언
+  //static 키워드를 쓴 이유는 메모리 효율을 위함임.
+  static const String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -23,9 +30,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 60.0,
                 ),
                 Text(
-                  'Flash Chat',
+                  '교양과목',
                   style: TextStyle(
-                    fontSize: 45.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -43,6 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to login screen.
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -61,6 +69,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to registration screen.
+                    Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
