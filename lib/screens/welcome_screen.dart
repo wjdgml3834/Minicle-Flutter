@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hanyang_flutter_project/screens/registration_screen.dart';
 import 'package:hanyang_flutter_project/screens/login_screen.dart';
+import 'package:hanyang_flutter_project/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  WelcomeScreen({Key? key}) : super(key: key);
 
   //main에서 welcome_screen route를 불러오기 위한 변수 선언
   //static 키워드를 쓴 이유는 메모리 효율을 위함임.
   static const String id = 'welcome_screen';
+
+
 
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
@@ -41,43 +45,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Color(0xFF0C9869),
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to login screen.
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    '로그인',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              title: '로그인',
+              colour:Color(0xFF8AA2A0),
+              onPressed: (){
+                Navigator.pushNamed(context, LoginScreen.id);
+              } ,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Color(0xFF8AA2A0),
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    '회원가입',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              title: '회원가입',
+              colour:Color(0xFF8AA2A0),
+              onPressed: (){
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              } ,
             ),
           ],
         ),
@@ -85,3 +65,4 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
+
