@@ -1,35 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hanyang_flutter_project/screens/chat_screen.dart';
+import 'package:hanyang_flutter_project/screens/login_screen.dart';
+import 'package:hanyang_flutter_project/screens/registration_screen.dart';
+import 'package:hanyang_flutter_project/screens/welcome_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(FlashChat());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class FlashChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '교양 프로젝트',
-      home: LogIn()
+      theme: ThemeData.dark().copyWith(
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: Colors.black54),
+        ),
+      ),
+      home: WelcomeScreen(),
     );
   }
 }
 
 
-class LogIn extends StatefulWidget {
-  const LogIn({Key? key}) : super(key: key);
-
-  @override
-  State<LogIn> createState() => _LogInState();
-}
-
-class _LogInState extends State<LogIn> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-       body: Container()
-
-    );
-  }
-}
