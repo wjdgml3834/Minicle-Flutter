@@ -10,8 +10,6 @@ class WelcomeScreen extends StatefulWidget {
   //static 키워드를 쓴 이유는 메모리 효율을 위함임.
   static const String id = 'welcome_screen';
 
-
-
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }

@@ -3,6 +3,8 @@ import 'package:hanyang_flutter_project/constants.dart';
 
 class ChatScreen extends StatefulWidget {
 
+  ChatScreen({Key? key}) : super(key: key);
+
   static const String id = 'chat_screen';
 
   @override
