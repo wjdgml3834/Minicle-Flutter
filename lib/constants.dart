@@ -18,6 +18,7 @@ const kMessageContainerDecoration = BoxDecoration(
   ),
 );
 
+// Input 관련 스타일에 해당하는 코드
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a value',
   contentPadding:
