@@ -17,50 +17,59 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/background_image_green.png'))),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
+            Column(
               children: <Widget>[
-                Container(
-                  child: Image.asset('assets/icons/bird-logo.png'),
-                  height: 60.0,
+                Text(
+                  'MINICLE',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
                 Text(
-                  '교양과목',
+                  '내손안에 작은 클래스',
                   style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 48.0,
-            ),
-            RoundedButton(
-              title: '로그인',
-              colour:Color(0xFF8AA2A0),
-              onPressed: (){
+            SizedBox(height: 356.0),
+            TextButton(
+              onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
-              } ,
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.white,
+              ),
+              child: Text(
+                '로그인',
+                style: TextStyle(
+                  color: Color(0xFF13B082),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
-            RoundedButton(
-              title: '회원가입',
-              colour:Color(0xFF8AA2A0),
-              onPressed: (){
-                Navigator.pushNamed(context, RegistrationScreen.id);
-              } ,
-            ),
+            SizedBox(height: 38.0)
           ],
         ),
       ),
     );
   }
 }
-
