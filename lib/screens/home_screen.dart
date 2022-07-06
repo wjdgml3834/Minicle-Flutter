@@ -105,17 +105,26 @@ class _HomeScreenState extends State<HomeScreen> {
               }
               if (snapshot.hasData) {
                 return Expanded(
-                  child: ListView(
-                    children: snapshot.data!.docs.reversed
-                        .map((card) => postCard(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        CardReaderScreen(card),
-                                  ));
-                            }, card))
-                        .toList(),
+                  child: SizedBox(
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(width: 1.0, color: Color(0xFFC4C4C4)),
+                        ),
+                      ),
+                      child: ListView(
+                        children: snapshot.data!.docs.reversed
+                            .map((card) => postCard(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            CardReaderScreen(card),
+                                      ));
+                                }, card))
+                            .toList(),
+                      ),
+                    ),
                   ),
                 );
               }
