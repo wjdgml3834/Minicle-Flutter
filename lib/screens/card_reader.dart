@@ -15,34 +15,26 @@ class _CardReaderScreenState extends State<CardReaderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-          backgroundColor: Color(0xFF13B082),
-          elevation: 0.0,
-          title: Text(
-            '게시물',
-            style: TextStyle(fontWeight: FontWeight.w700),
-          ),
+        backgroundColor: Color(0xFF13B082),
+        elevation: 0.0,
+        title: Text(
+          '게시물',
+          style: TextStyle(fontWeight: FontWeight.w700),
+        ),
         actions: [
           TextButton(
             style: ButtonStyle(
-              padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.all(0)),
+              padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0)),
             ),
-            onPressed: () {
-
-            },
-            child: Text(
-              '삭제',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15.0,
-                fontWeight: FontWeight.w700,
-              ),
+            onPressed: () {},
+            child: Icon(
+              Icons.delete,
+              color: Colors.white,
+              size: 24.0,
             ),
           ),
         ],
       ),
-
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -50,8 +42,8 @@ class _CardReaderScreenState extends State<CardReaderScreen> {
           children: [
             TextButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.all(0)),
+                padding:
+                    MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0)),
               ),
               onPressed: () {
                 Navigator.pushNamed(context, ChatScreen.id);
