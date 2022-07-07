@@ -15,12 +15,34 @@ class _CardReaderScreenState extends State<CardReaderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
           backgroundColor: Color(0xFF13B082),
           elevation: 0.0,
           title: Text(
             '게시물',
             style: TextStyle(fontWeight: FontWeight.w700),
-          )),
+          ),
+        actions: [
+          TextButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsets>(
+                  EdgeInsets.all(0)),
+            ),
+            onPressed: () {
+
+            },
+            child: Text(
+              '삭제',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
+      ),
+
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
